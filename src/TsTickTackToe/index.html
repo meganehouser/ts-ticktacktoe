@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="Scripts/knockout-2.2.1.js"></script>
+    <script src="gameconv.js"></script>
+    <script src="gamemodel.js"></script>
+    <script src="gameviewmodel.js"></script>
+</head>
+<body>
+    <h1>TypeScript HTML App</h1>
+    <input data-bind="value: currentPlayer" />
+    <div id="content"></div>
+      <script type="text/javascript">
+        var viewModel = new ViewModel.Game();
+        ko.applyBindings(viewModel);
+  </script>
+</body>
+</html>

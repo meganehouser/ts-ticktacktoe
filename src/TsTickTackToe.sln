@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TsTickTackToe", "TsTickTackToe\TsTickTackToe.csproj", "{FA966E64-707F-4B31-9F3A-D4E9AC8D21AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6347CAAA-DB49-42B2-BB41-788F387D24DF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA966E64-707F-4B31-9F3A-D4E9AC8D21AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA966E64-707F-4B31-9F3A-D4E9AC8D21AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA966E64-707F-4B31-9F3A-D4E9AC8D21AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA966E64-707F-4B31-9F3A-D4E9AC8D21AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
