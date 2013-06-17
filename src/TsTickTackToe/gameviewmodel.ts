@@ -1,6 +1,7 @@
 /// <reference path="Scripts/typings/knockout/knockout.d.ts" />
 /// <reference path="gamemodel.ts" />
 /// <reference path="gameconv.ts" />
+/// <reference path="cellviewmodel.ts" />
 
 module ViewModel {
     export class Game {
@@ -12,16 +13,20 @@ module ViewModel {
         constructor() {
             try {
                 this.game = new Model.Game();
+
                 this.currentPlayer = ko.computed(() => {
                     return Conv.playerToStr(this.game.currentPlayer());
                 }, this);
+
                 this.status = ko.computed(() => {
-                return Conv.statusToStr(this.game.status(), this.game.currentPlayer())
-            }, this);
-                this.board = ko.observableArray(Conv.boardToArray(this.game.board()));
+                    return Conv.statusToStr(this.game.status(), this.game.currentPlayer())
+                }, this);
+
+                this.board = ko.observableArray();
+                this.board(this.boardToCollection(this.game.board()));
 
                 this.game.board.subscribe(_ => {
-                    this.board(Conv.boardToArray(this.game.board()));
+                    this.board(this.boardToCollection(this.game.board()));
                 });
             }
             catch(e){
@@ -29,9 +34,16 @@ module ViewModel {
             }
         }
 
+        private boardToCollection(b: Array<Array<Figure>>) {
+            var arr = new Array<Cell>();
 
-        putFigure(x: number, y: number) {
-            this.game.putFigure(x, y);
+            [0, 1, 2].forEach(x => {
+                [0, 1, 2].forEach(y => {
+                    arr.push(new Cell(x, y, b[x][y], this.game));
+                })
+            });
+
+            return arr;
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿div#board {
+    display:table;
+    width:300px;
+    height:300px;
+}
+
+div.cell {
+    display:table-cell;
+    width:98px;
+    height:98px;
+    float:left;
+    border: solid 1px #A0522D;
+    text-align: center;
+    vertical-align: middle;
+    font-size: xx-large;
+}
+
+

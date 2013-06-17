@@ -3,17 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
+    <title>三目並べ</title>
+    <link rel="stylesheet" href="css/ticktacktoe.css" type="text/css" />
     <script src="Scripts/knockout-2.2.1.js"></script>
     <script src="gameconv.js"></script>
     <script src="gamemodel.js"></script>
     <script src="gameviewmodel.js"></script>
+    <script src="cellviewmodel.js"></script>
 </head>
 <body>
-    <h1>TypeScript HTML App</h1>
-    <input data-bind="value: currentPlayer" />
-    <div id="content"></div>
+    <h1>三目並べ</h1>
+    <div id="content">
+        <div id="board" data-bind="foreach: board">
+            <div class="cell"><p data-bind="text: figure"></p></div>
+        </div>
+        <span data-bind="text: currentPlayer" />
+    </div>
       <script type="text/javascript">
         var viewModel = new ViewModel.Game();
         ko.applyBindings(viewModel);
