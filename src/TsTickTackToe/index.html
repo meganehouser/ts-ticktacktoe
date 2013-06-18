@@ -15,9 +15,13 @@
     <h1>三目並べ</h1>
     <div id="content">
         <div id="board" data-bind="foreach: board">
-            <div class="cell"><p data-bind="text: figure"></p></div>
+            <div class="cell" data-bind="click: putFigure">
+                <p data-bind="text: figure"></p>
+            </div>
         </div>
-        <span data-bind="text: currentPlayer" />
+        <div id="player">
+            <span data-bind="text: currentPlayer" />
+        </div>
     </div>
       <script type="text/javascript">
         var viewModel = new ViewModel.Game();

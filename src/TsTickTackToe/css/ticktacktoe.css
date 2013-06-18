@@ -15,4 +15,7 @@ div.cell {
     font-size: xx-large;
 }
 
-
+div#player {
+    margin:10px;
+    font-size: x-large;
+}

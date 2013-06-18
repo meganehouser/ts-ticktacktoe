@@ -8,7 +8,7 @@ module Conv {
             case Figure.cross:
                 return "×";
         }
-        return "△";                
+        return "";                
     }
 
     export function playerToStr(p: Player) {
