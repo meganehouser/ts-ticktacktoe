@@ -34,7 +34,7 @@ module Model {
             [0, 1, 2].forEach(i => {
                 var line = new Array<Figure>();
                 [0, 1, 2].forEach(j => {
-                    line[i] = Figure.blank;
+                    line[j] = Figure.blank;
                 })
                 b[i] = line;
             });
