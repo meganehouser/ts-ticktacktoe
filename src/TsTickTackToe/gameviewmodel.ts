@@ -8,7 +8,7 @@ module ViewModel {
         game : Model.Game
         board: KnockoutObservableArray;
         currentPlayer: KnockoutObservable<string>;
-        status: KnockoutObservable<string>;
+        status: KnockoutComputed<string>;
 
         constructor() {
             try {

@@ -1,5 +1,4 @@
 /// <reference path="Scripts/typings/knockout/knockout.d.ts" />
-/// <reference path="Scripts/typings/knockout/knockout.extensions.d.ts" />
 enum Player {
     first,
     second
