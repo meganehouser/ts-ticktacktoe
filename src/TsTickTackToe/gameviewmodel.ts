@@ -6,7 +6,7 @@
 module ViewModel {
     export class Game {
         game : Model.Game
-        board: KnockoutObservableArray;
+        board: KnockoutObservableArray<ViewModel.Cell>;
         currentPlayer: KnockoutObservable<string>;
         status: KnockoutComputed<string>;
 
@@ -19,11 +19,12 @@ module ViewModel {
                 }, this);
 
                 this.status = ko.computed(() => {
-                    return Conv.statusToStr(this.game.status(), this.game.currentPlayer())
+                    return Conv.statusToStr(<Model.Status>this.game.status())
                 }, this);
 
-                this.board = ko.observableArray();
-                this.board(this.boardToCollection(this.game.board()));
+                this.status.subscribe(_ => { alert(this.status()) });
+                
+                this.board = ko.observableArray(this.boardToCollection(this.game.board()));
 
                 this.game.board.subscribe(_ => {
                     this.board(this.boardToCollection(this.game.board()));

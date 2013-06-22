@@ -25,7 +25,7 @@ declare function waitsFor(latchMethod: () => bool, failureMessage: string, timeo
 declare function waits(timeout?: number): void;
 
 declare module jasmine {
-
+    function log(message: any): void;
     var Clock: Clock;
 
     function any(aclass: any);

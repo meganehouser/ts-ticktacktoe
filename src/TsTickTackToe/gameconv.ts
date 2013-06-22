@@ -21,9 +21,14 @@ module Conv {
         return "";
     }
 
-    export function statusToStr(s: Status, p: Player) {
-        if (s == Status.finished) {
-            return "勝者：" + playerToStr(p);
+    export function statusToStr(s: Model.Status) {
+        if (s.state == GameState.finished) {
+            if (s.winner == Player.none) {
+                return "引き分け ！！";
+            }
+            else {
+                return "勝者：" + playerToStr(s.winner);
+            }
         }
 
         return "";
