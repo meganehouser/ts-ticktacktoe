@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<title>TypeScript紹介とJSライブラリの世界</title>
+
+	<meta name="description" content="LT slides for TypeScript and JS libraries. Use the simple example of jmpress.js.">
+	<meta name="author" content="Kyle Robinson Young @shama & Tobias Koppers @sokra" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<link href="simple.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jmpress.js"></script>
+</head>
+<body>
+
+<div id="simple">
+    <div id="home" class="step">
+        <div class="title cover">
+            <p>TypeScript<br/>と<br/>JSライブラリの世界</p>
+        </div>
+        <div class="footer">@meganehouser</div>
+	</div>
+    <div class="step" data-x="1000">
+        <div class="title header"><p>今日話すこと</p></div>
+        <p>TypeScript触ってみました。</p>
+        <p>JSライブラリの発展すごいよ。</p>
+	</div>
+	<div class="step" data-x="2000">
+		<p>You might think it is boring...</p>
+	</div>
+	<div class="step" data-x="3000">
+		<p>but that is the point. This is a simple example.</p>
+	</div>
+</div>
+
+<div class="hint">
+    <p>Use arrow keys to navigate</p>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#simple').jmpress();
+});
+</script>
+</body>
+</html>
