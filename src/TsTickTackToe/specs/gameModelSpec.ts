@@ -7,6 +7,19 @@ describe("gameModel", () => {
     var game: Model.Game;
     beforeEach(() => { game = new Model.Game() });
 
+    describe("ゲームを初期化する", () => {
+        it("盤が準備される", () => {
+            expect(game.board().length).toEqual(3);
+            [0, 1, 2].forEach(i => expect(game.board()[i].length).toEqual(3));
+        });
+
+        it("盤上の升がすべて駒なし", () => {
+            [0, 1, 2].forEach(x => [0, 1, 2].forEach(y => {
+                expect(game.board()[x][y]).toEqual(Figure.blank);
+            }));
+        });
+    });
+
     describe("駒を置く", () => {
         var notified = false;
 
@@ -29,6 +42,21 @@ describe("gameModel", () => {
         it("エラーが発生する", () => {
             game.putFigure(0, 0);
             expect(() => game.putFigure(0,0)).toThrow("MultiplePutError");
+        });
+    });
+
+    describe("盤の外に駒を置く", () => {
+        it("上端より上", () => {
+            expect(() => game.putFigure(1, -1)).toThrow("BoardRangeOutError")
+        });
+        it("左端より左", () => {
+            expect(() => game.putFigure(-1, 0)).toThrow("BoardRangeOutError")
+        });
+        it("下端より下", () => {
+            expect(() => game.putFigure(2, 3)).toThrow("BoardRangeOutError")
+        });
+        it("右端より右", () => {
+            expect(() => game.putFigure(3, 1)).toThrow("BoardRangeOutError")
         });
     });
 

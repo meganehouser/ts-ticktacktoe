@@ -51,6 +51,11 @@ module Model {
         }
 
         putFigure(x: number, y: number):void {
+            // 範囲内か判定
+            if (x < 0 || 2 < x || y < 0 || 2 < y) {
+                throw new Error("BoardRangeOutError");
+            }
+
             var b = this.board();
 
             if (b[x][y] != Figure.blank) {
