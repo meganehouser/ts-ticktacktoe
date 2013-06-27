@@ -2,7 +2,7 @@
 /// <reference path="../gamemodel.ts" />
 
 module TestUtils {
-    export function putFigures(first: number[][], second: number[][], game:Model.IGame) {
+    export function putFigures(first: number[][], second: number[][], game:Model.Game) {
         var turns = _.zip(first, second);
         var notation: number[][] = _.flatten(turns, true);
 

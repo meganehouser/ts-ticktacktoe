@@ -60,6 +60,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="specs\gameViewModelSpec.ts" />
+    <Content Include="specs\gameViewModelSpec.js">
+      <DependentUpon>gameViewModelSpec.ts</DependentUpon>
+    </Content>
     <Content Include="testem.json" />
   </ItemGroup>
   <ItemGroup>

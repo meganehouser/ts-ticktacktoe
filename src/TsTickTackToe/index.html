@@ -25,7 +25,9 @@
         </div>
     </div>
       <script type="text/javascript">
-        var viewModel = new ViewModel.Game();
+        var model = new Model.Game();
+        var viewModel = new ViewModel.Game(model);
+        viewModel.notifyResultMessage = (function (s) { alert(s); })
         ko.applyBindings(viewModel);
   </script>
 </body>

@@ -9,10 +9,11 @@ module ViewModel {
         board: KnockoutObservableArray<ViewModel.Cell>;
         currentPlayer: KnockoutObservable<string>;
         status: KnockoutComputed<string>;
+        notifyResultMessage: (s:string) => void;
 
-        constructor() {
+        constructor(model:Model.IGame) {
             try {
-                this.game = new Model.Game();
+                this.game = model;
 
                 this.currentPlayer = ko.computed(() => {
                     return Conv.playerToStr(this.game.currentPlayer());
@@ -22,7 +23,9 @@ module ViewModel {
                     return Conv.statusToStr(<Model.Status>this.game.status())
                 }, this);
 
-                this.status.subscribe(_ => { alert(this.status()) });
+                this.status.subscribe(_ => {
+                    this.notifyResultMessage(this.status())
+                });
                 
                 this.board = ko.observableArray(this.boardToCollection(this.game.board()));
 
@@ -37,9 +40,9 @@ module ViewModel {
 
         private boardToCollection(b: Array<Array<Figure>>) {
             var arr = new Array<Cell>();
-
-            [0, 1, 2].forEach(x => {
-                [0, 1, 2].forEach(y => {
+            
+            _.range(b.length).forEach(x => {
+                _.range(b[0].length).forEach(y => {
                     arr.push(new Cell(x, y, b[x][y], this.game));
                 })
             });

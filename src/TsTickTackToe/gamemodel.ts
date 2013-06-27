@@ -20,8 +20,11 @@ enum GameState {
 
 module Model {
     export interface IGame {
-        putFigure(x: number, y: number) :void; 
-    }
+        board: KnockoutObservable<Figure[][]>;
+        currentPlayer: KnockoutObservable<Player>;
+        status: KnockoutObservable<Status>;
+       putFigure(x: number, y: number) :void; 
+   }
 
     export class Status {
         constructor(public state:GameState, public winner:Player) {}
@@ -75,7 +78,7 @@ module Model {
             this.currentPlayer((this.currentPlayer() == Player.first) ? Player.second : Player.first);
         }
 
-        isFinish(x: number, y: number, board: Figure[][]) {
+        private isFinish(x: number, y: number, board: Figure[][]) {
             // 引き分け判定
             var isDraw = _.all(board, (line, x?, bd?) => {
                  return _.all(line, (cell, y?, ln?) => cell != Figure.blank)
