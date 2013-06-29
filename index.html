@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<title>TypeScript紹介とJSライブラリの世界</title>
+
+	<meta name="description" content="LT slides for TypeScript and JS libraries. Use the simple example of jmpress.js.">
+	<meta name="author" content="Kyle Robinson Young @shama & Tobias Koppers @sokra" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<link href="simple.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jmpress.js"></script>
+</head>
+<body>
+
+<div id="simple">
+    <div id="home" class="step">
+        <div class="title cover">
+            <p>TypeScript<br/>と<br/>JSライブラリの世界</p>
+        </div>
+        <div class="footer">@meganehouser</div>
+	</div>
+    <div class="step" data-x="1000" data-y="500" data-z="-300" data-rotate="45">
+        <div class="title header">
+            <p>今日話すこと</p>
+        </div>
+        <ul>
+            <li>TypeScript触ってみました。</li>
+            <li>JSライブラリの発展すごいよ。</li>
+        </ul>
+	</div>
+	<div class="step" data-x="1400" data-y="1500" data-z="-600" data-rotate="90">
+        <div class="title header">
+            <p><a href="http://www.typescriptlang.org/">TypeScript</a>って何？</p>
+        </div>
+        <ul>
+            <li>AltJS !
+                <ul>
+                    <li>JavaScriptにコンパイルできる言語</li>
+                </ul>
+            </li>
+            <li>C#を作ったアンダースさんが作ったよ</li>
+            <li>JavaScriptのかゆいところに手が届くよ
+                <ul>
+                    <li>静的型付け/クラスベースのオブジェクト指向/名前空間など</li>
+                </ul>
+            </li>
+            <li>ほぼ同じ構造のリーダブルなJSが出来上がるよ</li>
+            <li>Apache License 2.0</li>
+        </ul>
+	</div>
+	<div class="step" data-x="1000" data-y="2500" data-z="-900" data-rotate="135">
+        <div class="title header">
+            <p>その他のAltJS (1)</p>
+        </div>
+        <ul>
+            <li><a href="http://coffeescript.org/">CoffeeScript</a>
+                <ul>
+                    <li>Rails標準</li>
+                    <li>でも静的型付けではない</li>
+                    <li>読みやすいJSを出力</li>
+                </ul>
+            </li>
+            <li><a href="http://haxe.org/?lang=jp">Haxe</a>
+                <ul>
+                    <li>コンパイル後のJSが最適化される</li>
+                    <li>Flash,PHP,Java,C#とかにもコンパイルできるらしい</li>
+                </ul>
+            </li>
+        </ul>
+	</div>
+    <div class="step" data-x="0" data-y="3000" data-z="-1200" data-rotate="180">
+        <div class="title header">
+            <p>その他のAltJS (2)</p>
+        </div>
+        <ul>
+            <li><a href="http://www.dartlang.org/">Dart</a>
+                <ul>
+                    <li>Google社製</li>
+                    <li>コンパイルしてネイティブ化もできる</li>
+                    <li>JavaScriptの置き換えを狙っている</li>
+                    <li>最適化</li>
+                </ul>
+            </li>
+            <li><a href="http://jsx.github.io/">JSX</a>
+                <ul>
+                    <li>DeNA社製</li>
+                    <li>最適化</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+	<div class="step" data-x="-1000" data-y="2500" data-z="-900" data-rotate="225">
+        <div class="title header">
+            <p>始め方</p>
+        </div>
+        <ul>
+            <li>node.jsの場合
+                <ul>
+                    <li>npm -g install typescript</li>
+                    <li>エディタはVim、Emacs、Sublime Textなど</li>
+                </ul>
+            </li>
+            <li>Visual Studio
+                <ul>
+                    <li>拡張機能としてインストール</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+	<div class="step" data-x="-1400" data-y="1500" data-z="-600" data-rotate="270">
+        <div class="title header">
+            <p>どんな言語仕様？</p>
+        </div>
+        <ul>
+            <li>module</li>
+            <li>class</li>
+            <li>enum</li>
+            <li>reference</li>
+            <li>generics</li>
+            <li>宣言ソースファイル</li>
+        </ul>
+        <p><a href="https://github.com/meganehouser/ts-ticktacktoe">サンプル</a>作ってみました</p>
+    </div>
+	<div class="step" data-x="-1000" data-y="500" data-z="-300" data-rotate="315">
+        <div class="title header">
+            <p>メリット</p>
+        </div>
+        <ul>
+            <li>Visual Studio で使ってみて
+                <ul>
+                    <li>インテリセンス</li>
+                    <li>デバッグ</li>
+                </ul>
+            </li>
+            <li>既存JSライブラリと連携が容易
+                <ul>
+                    <li>NuGetで宣言ファイルとライブラリ本体を入手可</li>
+                    <li>有名どころの宣言ファイルはたいてい公開されている(<a href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a>)</li>
+                </ul>
+        </ul>
+    </div>
+	<div class="step" data-x="-1500" data-y="0" data-rotate="135">
+        <div class="title header">
+            <p>デメリット</p>
+        </div>
+        <ul>
+            <li>referenceだるい</li>
+            <li>htmlファイルにjsパスの追加忘れがち</li>
+            <li>公開されている宣言ファイル0.9対応(主にgenerics)されてない場合あり</li>
+            <li>公開されてなかったり、自作のJSライブラリの場合は宣言ファイルも自作</li>
+            <li>IDEとの連携がまだ弱い</li>
+        </ul>
+    </div>
+    <div class="step" data-x="-2300" data-y="500" data-z="300" data-rotate="180">
+        <div class="title cover">
+            <p>ところで</p>
+        </div>
+	</div>
+    <div class="step" data-x="-3200" data-y="200" data-z="600" data-rotate="225">
+        <div class="title cover">
+            <p>現代のJSライブラリの充実ぶりすごい</p>
+        </div>
+        <div class="fotter"><p>私の知識がPrototype.jsが流行りだした頃で止まってたので…</p></div>
+    </div>
+	<div class="step" data-x="-3600" data-y="-600" data-z="900" data-rotate="270">
+        <div class="title header">
+            <p>サンプルで使ってみた</p>
+        </div>
+        <ul>
+            <li>
+                <a href="https://github.com/airportyh/testem">testerm</a>
+                <ul><li>テストランナー(更新自動検知!)</li></ul>
+            </li>
+            <li>
+                <a href="http://pivotal.github.io/jasmine/">jasmine</a>
+                <ul><li>ユニットテスト(Spec形式)</li></ul>
+            </li>
+            <li>
+                <a href="http://knockoutjs.com/">knockout.js</a>
+                <ul><li>MVVMパターンフレームワーク</li></ul>
+            </li>
+            <li>
+                <a href="http://underscorejs.org/">underscore.js</a>
+                <ul><li>コレクション処理</li></ul>
+            </li>
+        </ul>
+    </div>
+	<div class="step" data-x="-3500" data-y="-1400" data-z="1200" data-rotate="315">
+        <div class="title header">
+            <p>コーディングの様子</p>
+        </div>
+        <ul>
+            <li>testermを起動させておく</li>
+            <li>ブラウザでテストランナーを表示する</li>
+            <li>jasmineでSpecを書く</li>
+            <li>実装</li>
+            <li>ビルド</li>
+            <li>テストが自動実行される(゜д゜)ｳﾏｰ</li>
+        </ul>
+    </div>
+	<div class="step" data-x="-2600" data-y="-2000" data-z="1500" data-rotate="0">
+        <div class="title header">
+            <p>使ってないけど気になる</p>
+        </div>
+        <ul>
+            <li><a href="http://qunitjs.com/">QUnit</a><span class="small"> ・・・ ユニットテスト(XUnit形式)</span></li>
+            <li><a href="http://backbonejs.org/">Backbone.js</a><span class="small"> ・・・ MVCフレームワーク</span></li>
+            <li><a href="http://gruntjs.com/">grunt</a><span class="small"> ・・・ ビルドツール</span></li>
+            <li><a href="http://bower.io/">bower</a><span class="small"> ・・・ パッケージマネージャ</span></li>
+            <li><a href="http://requirejs.org/">RequireJS</a><span class="small"> ・・・ モジュールの動的ロード</span></li>
+            <li><a href="http://phantomjs.org/">PhantomJS</a><span class="small"> ・・・ コマンドラインでWebKitを操作(テストに便利)</span>
+        </ul>
+    </div> 
+    <div class="step" data-x="-1400" data-y="-1500" data-z="800" data-rotate-x="180" data-rotate="45">
+        <div class="title header">
+            <p>まとめ</p>
+        </div>
+        <ul>
+            <li>ちょうどいい塩梅の静的型付けでサクサク書ける</li>
+            <li>既存ライブラリを利用して短いコードでいろいろできる</li>
+            <li>今後も目が離せない！！(Ver1.0待望)</li>
+        </ul>
+    </div>
+</div>
+<div class="hint">
+    <p>Use arrow keys to navigate</p>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#simple').jmpress();
+});
+</script>
+</body>
+</html>
